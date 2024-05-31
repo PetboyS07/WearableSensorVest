@@ -1,3 +1,12 @@
+/**********************************************************
+	File:   GSR_Sensor.cpp
+	Project:   Capacitive Sensor
+	
+	Copyright: (c) 2024 Patrick Schuurman
+	
+	Auteur:    Patrick Schuurman
+	Datum:     30 mei 2024
+**********************************************************/
 const int GSR=A0;
 
 int sensorValue=0;
