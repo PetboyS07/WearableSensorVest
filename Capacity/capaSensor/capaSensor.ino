@@ -1,3 +1,12 @@
+/**********************************************************
+	File:   Main.cpp
+	Project:   Capacitive Sensor
+	
+	Copyright: (c) 2024 Patrick Schuurman
+	
+	Auteur:    Patrick Schuurman
+	Datum:     30 mei 2024
+
 #define sensorPin A0
 
 int sensorValue = 0;  // int to save sensorvalue
