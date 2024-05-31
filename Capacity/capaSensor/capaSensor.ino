@@ -2,7 +2,7 @@
 
 int sensorValue = 0;  // int to save sensorvalue
 int wetValue = 212; // int to calibrate wet state
-int dryValue = 457; // int to calibrate dry state 
+int dryValue = 473; // int to calibrate dry state 
 int humidity = 0; // int to save humidity calculations
 
 
