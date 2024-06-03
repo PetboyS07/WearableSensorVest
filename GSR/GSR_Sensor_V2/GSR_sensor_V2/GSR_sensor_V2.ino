@@ -1,4 +1,5 @@
 //GSR Grove sensor
+//Sensor zit op de huid, voordat het systeem wordt gestart, voor de kalabratie.
 const int GSR = A1;
 
 int sensorValue = 0;
@@ -23,7 +24,7 @@ void setup()
 {
   Serial.begin(9600);
   
-  SerialCalibration = Sumcal();
+  SerialCalibration = Sumcal();             //bepaal waarde van de droge huid
   //Serial.print("SerialCalibration= ");
   //Serial.println(SerialCalibration);
 }
@@ -32,7 +33,9 @@ void loop()
 {
   gsr_average = Sumcal();
   difference = abs(SerialCalibration - gsr_average);
-  //HumanResistance = ((1024 + 2 * gsr_average) * 10000) / difference;
+  HumanResistance = ((SerialCalibration - difference) / SerialCalibration) * 100; //0 < HR < 100 procent
+
+  //HumanResistance = ((1024 + 2 * gsr_average) * 10000) / difference; //in ohm, maar zeer onnauwkeurig
   //1024 is 2^10, want tien byte output
   //2 maal gemiddelde output, ?
   // * 10000, want de geleiding op droge huid is heel groot
@@ -41,10 +44,10 @@ void loop()
   //Serial.print("reading= ");
   //Serial.println(gsr_average);
 
-  Serial.print("difference= ");
-  Serial.println(difference);
+  //Serial.print("difference= ");
+  //Serial.println(difference);
 
-  //Serial.print("HR= ");
-  //Serial.println(HumanResistance);
+  Serial.print("HR= ");
+  Serial.println(HumanResistance);
 
 }
