@@ -6,6 +6,7 @@
 	
 	Auteur:    Patrick Schuurman
 	Datum:     30 mei 2024
+**********************************************************/
 
 #define sensorPin A0
 
