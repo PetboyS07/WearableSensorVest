@@ -8,7 +8,7 @@
 	Datum:     30 mei 2024
 **********************************************************/
 
-#define sensorPin A0
+#define sensorPin A5
 
 long calibratedSkinCapacity = 0; // variable to store calibrated skin capacity without stress
 
@@ -56,19 +56,19 @@ void loop()
   // when sensor doesnt make good contact with skin give ERROR otherwise continue
   if(difference < 0)
   {
-    Serial.println("Sensor ERROR, Please be sure sensor makes contact"); // sensor doesnt make good contact
+    //Serial.println("Sensor ERROR, Please be sure sensor makes contact"); // sensor doesnt make good contact
   }
   else
   {
     Serial.print("Skin Capacity= ");
-    Serial.print(currentSkinCapacity);  //print sensor value
-    Serial.print(" | ");
-    Serial.print("Diff: ");
-    Serial.print(difference); // print differnece between calc en current value
-    Serial.print(" | ");
-    Serial.print("diffPerc: ");
-    Serial.print(diffPerc);
-    Serial.println("%");
+    Serial.println(currentSkinCapacity);  //print sensor value
+    //Serial.print(",");
+    //Serial.print("Diff= ");
+    //Serial.print(difference); // print differnece between calc en current value
+    //Serial.print(",");
+    //Serial.print("diffPerc= ");
+    //Serial.print(diffPerc);
+    //Serial.println("%");
   }
 
   delay(500); //Wait half a second before next reading
